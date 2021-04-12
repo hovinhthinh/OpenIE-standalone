@@ -9,6 +9,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import edu.illinois.cs.cogcomp.annotation.AnnotatorException;
+import edu.illinois.cs.cogcomp.annotation.AnnotatorServiceConfigurator;
 import edu.iitd.cse.open_nre.onre.constants.OnreConstants;
 import edu.iitd.cse.open_nre.onre.domain.OnrePatternNode;
 import edu.iitd.cse.open_nre.onre.domain.Onre_dsDanrothSpan;
@@ -115,12 +117,21 @@ public class OnreHelper_DanrothQuantifier {
 		
 		return map_quantifiers_unitDanroth;
 	}
-	
+
+	private static Quantifier quantifier = new Quantifier() {{
+		initialize(null);
+		AnnotatorServiceConfigurator.DISABLE_CACHE.value = "true";
+	}};
+
 	public static Onre_dsDanrothSpans getQuantitiesDanroth(String text) {
 		List<QuantSpan> quantSpans = null;
 
-		Quantifier quantifier = new Quantifier();
-		quantSpans = quantifier.getSpans(text, true);
+		try {
+			quantSpans = quantifier.getSpans(text, true, null);
+		} catch (AnnotatorException e) {
+			e.printStackTrace();
+			quantSpans = new ArrayList<>();
+		}
 
 		Onre_dsDanrothSpans danrothSpans = new Onre_dsDanrothSpans();
 		

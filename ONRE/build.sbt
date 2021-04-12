@@ -33,13 +33,9 @@ libraryDependencies ++= Seq(
   "org.slf4j" % "slf4j-api" % "1.7.5",
   "ch.qos.logback" % "logback-core" % "1.0.13",
   "ch.qos.logback" % "logback-classic" % "1.0.13",
-  "edu.illinois.cs.cogcomp" % "illinois-quantifier" % "2.0.1",
-  "edu.illinois.cs.cogcomp" % "LBJava" % "1.0.3",
-  "edu.illinois.cs.cogcomp" % "illinois-pos" % "2.0.0",
-  "edu.illinois.cs.cogcomp" % "edison" % "0.7.1",
+  "edu.illinois.cs.cogcomp" % "illinois-quantifier" % "4.0.13",
   "edu.mit" % "jwi" % "2.2.3",
   "com.google.code.gson" % "gson" % "2.6.2",
-  "edu.illinois.cs.cogcomp" % "illinois-core-utilities" % "1.2.9",
   "net.sf.trove4j" % "trove4j" % "2.1.0"
 
 

@@ -1,3 +1,9 @@
+**Modification:** Use Illinois Quantifier v4.0.13 instead of v2.0.1
+
+**Note:** We need to remove the two packages `edu.illinois.cs.cogcomp` and `edu.iitd.cse.open_nre.onre` from `BONIE.jar` before assembling.
+
+---
+
 Open IE 5.1
 ======
 This project contains the principal Open Information Extraction (Open IE)
@@ -113,7 +119,7 @@ Also, download the standalone jar for CALMIE from [here](https://github.com/dair
 
 CALMIE uses Berkeley Language Model. Download the Language Model file from [here](https://drive.google.com/file/d/0B-5EkZMOlIt2cFdjYUJZdGxSREU/view?usp=sharing) and place it inside a data folder(create the `data` folder parallel to the `src` folder)
 
-`openie` uses java-8-openjdk & the [sbt build system](http://www.scala-sbt.org/), so downloading
+**Important:** `openie` uses java-8-openjdk & the [sbt build system](http://www.scala-sbt.org/) 0.13, so downloading
 dependencies and compiling is simple:
 
 1. Add sbt/bin to your path.
